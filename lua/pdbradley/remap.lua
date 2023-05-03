@@ -21,6 +21,18 @@ vim.keymap.set("n", "<S-l>", "gt")
 vim.keymap.set("n", "<S-h>", "gT")
 
 vim.keymap.set("n", "<Return>", "A<Return><Esc>")
+ 
+--apply macros with Q
+vim.api.nvim_set_keymap('n', 'Q', '@q', {noremap = true})
+vim.api.nvim_set_keymap('v', 'Q', ':norm @q<CR>', {noremap = true})
+
+--open splits and switch
+vim.keymap.set("n", "<leader>w", "<C-w>v<C-w>l")
+vim.keymap.set("n", "<leader>h", "<C-w>s<C-w>j")
+
+-- hashrocket shortcut
+vim.keymap.set("i", "<c-l>", "<space>=><space>")
+
 
 
 --vim.keymap.set('n', '<leader>c', require('osc52').copy_operator, {expr = true})

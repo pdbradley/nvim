@@ -32,6 +32,7 @@ return require('packer').startup(function(use)
   use('ojroques/vim-oscyank')
 
 	use('github/copilot.vim')
+	use('neovim/nvim-lspconfig')
 
 
 
