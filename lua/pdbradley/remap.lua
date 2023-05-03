@@ -23,7 +23,26 @@ vim.keymap.set("n", "<S-h>", "gT")
 vim.keymap.set("n", "<Return>", "A<Return><Esc>")
 
 
---vim.api.nvim_set_keymap('n', '<leader>c', '<Plug>OSCYankOperator', {})
---vim.api.nvim_set_keymap('n', '<leader>cc', '<leader>c_', {})
-vim.api.nvim_set_keymap('v', '<leader>y', '<Plug>OSCYankVisual', {})
+--vim.keymap.set('n', '<leader>c', require('osc52').copy_operator, {expr = true})
+--vim.keymap.set('n', '<leader>cc', '<leader>c_', {remap = true})
+--vim.keymap.set('v', '<leader>y', require('osc52').copy_visual)
+vim.keymap.set('v', '<leader>y', '<Plug>OSCYankVisual')
 
+
+local function copy(lines, _)
+  require('osc52').copy(table.concat(lines, '\n'))
+end
+
+local function paste()
+  return {vim.fn.split(vim.fn.getreg(''), '\n'), vim.fn.getregtype('')}
+end
+
+vim.g.clipboard = {
+  name = 'osc52',
+  copy = {['+'] = copy, ['*'] = copy},
+  paste = {['+'] = paste, ['*'] = paste},
+}
+
+-- Now the '+' register will copy to system clipboard using OSC52
+-- vim.keymap.set('n', '<leader>c', '"+y')
+-- vim.keymap.set('n', '<leader>cc', '"+yy')
