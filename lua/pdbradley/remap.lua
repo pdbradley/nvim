@@ -2,6 +2,13 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("i", "jj", '<Esc>')
 
+
+-- %% will expand on command line to the current file's directory
+vim.api.nvim_set_keymap('c', '%%', '<C-R>=expand(\'%:h\')<CR>', {noremap = true})
+-- can't get this to work with :edit %% it just inserts the chars
+vim.keymap.set("n", "<leader>e", ':edit <C-R>=expand(\'%:h\')<CR>')
+
+
 --easy nav across vim splits
 vim.keymap.set("n", "<C-h>", '<C-w>h')
 vim.keymap.set("n", "<C-j>", '<C-w>j')
@@ -40,20 +47,6 @@ vim.keymap.set("i", "<c-l>", "<space>=><space>")
 --vim.keymap.set('v', '<leader>y', require('osc52').copy_visual)
 vim.keymap.set('v', '<leader>y', '<Plug>OSCYankVisual')
 
-
-local function copy(lines, _)
-  require('osc52').copy(table.concat(lines, '\n'))
-end
-
-local function paste()
-  return {vim.fn.split(vim.fn.getreg(''), '\n'), vim.fn.getregtype('')}
-end
-
-vim.g.clipboard = {
-  name = 'osc52',
-  copy = {['+'] = copy, ['*'] = copy},
-  paste = {['+'] = paste, ['*'] = paste},
-}
 
 -- Now the '+' register will copy to system clipboard using OSC52
 -- vim.keymap.set('n', '<leader>c', '"+y')
