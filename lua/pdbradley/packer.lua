@@ -24,6 +24,7 @@ return require('packer').startup(function(use)
 	use('mbbill/undotree')
 	use('preservim/nerdtree')
 	use('tpope/vim-fugitive')
+	use('tpope/vim-commentary')
   use('sheerun/vim-polyglot')
   use('slim-template/vim-slim')
 

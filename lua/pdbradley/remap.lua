@@ -4,9 +4,9 @@ vim.keymap.set("i", "jj", '<Esc>')
 
 
 -- %% will expand on command line to the current file's directory
-vim.api.nvim_set_keymap('c', '%%', '<C-R>=expand(\'%:h\')<CR>', {noremap = true})
+vim.api.nvim_set_keymap('c', '%%', '<C-R>=expand(\'%:h\').\'/\'<CR>', {noremap = true})
 -- can't get this to work with :edit %% it just inserts the chars
-vim.keymap.set("n", "<leader>e", ':edit <C-R>=expand(\'%:h\')<CR>')
+vim.keymap.set("n", "<leader>e", ':edit <C-R>=expand(\'%:h\').\'/\'<CR>')
 
 
 --easy nav across vim splits
