@@ -46,8 +46,9 @@ vim.keymap.set("i", "<c-l>", "<space>=><space>")
 --vim.keymap.set('n', '<leader>cc', '<leader>c_', {remap = true})
 --vim.keymap.set('v', '<leader>y', require('osc52').copy_visual)
 vim.keymap.set('v', '<leader>y', '<Plug>OSCYankVisual')
+vim.keymap.set('n', '<leader>y', ':ChatGPT<CR>')
 
 
 -- Now the '+' register will copy to system clipboard using OSC52
--- vim.keymap.set('n', '<leader>c', '"+y')
+-- vim.keymap.set('n', '<leader>c', '"+y' y)
 -- vim.keymap.set('n', '<leader>cc', '"+yy')
