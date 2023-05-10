@@ -28,10 +28,6 @@ return require('packer').startup(function(use)
   use('sheerun/vim-polyglot')
   use('slim-template/vim-slim')
 
-	-- for cut paste across ssh
-  -- use('ojroques/nvim-osc52')
-  use('ojroques/vim-oscyank')
-
 	use('github/copilot.vim')
 	use('neovim/nvim-lspconfig')
 	use('james1236/backseat.nvim')
