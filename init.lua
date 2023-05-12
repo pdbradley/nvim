@@ -12,6 +12,4 @@ vim.cmd([[
 vim.cmd("autocmd BufNewFile,BufRead *.inky-slim set filetype=slim")
 
 
-
-
-
+vim.o.clipboard = "unnamedplus"

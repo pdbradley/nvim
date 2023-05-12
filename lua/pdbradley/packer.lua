@@ -28,9 +28,17 @@ return require('packer').startup(function(use)
   use('sheerun/vim-polyglot')
   use('slim-template/vim-slim')
 
+	use('roxma/vim-tmux-clipboard')
+
 	use('github/copilot.vim')
 	use('neovim/nvim-lspconfig')
 	use('james1236/backseat.nvim')
+
+	use({
+				'ojroques/vim-oscyank',
+				tag = 'v1.0.0'
+			}
+	)
 
 	use({
 		"jackMort/ChatGPT.nvim",

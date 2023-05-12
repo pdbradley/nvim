@@ -26,7 +26,6 @@ vim.keymap.set("n", "<leader>q", ':q<cr>')
 vim.keymap.set("n", "<C-t>", vim.cmd.tabnew)
 vim.keymap.set("n", "<S-l>", "gt")
 vim.keymap.set("n", "<S-h>", "gT")
-
 vim.keymap.set("n", "<Return>", "A<Return><Esc>")
  
 --apply macros with Q
@@ -41,11 +40,12 @@ vim.keymap.set("n", "<leader>h", "<C-w>s<C-w>j")
 vim.keymap.set("i", "<c-l>", "<space>=><space>")
 
 
+-- Define the mapping
+vim.api.nvim_set_keymap('v', '<leader>c', ':OSCYank<CR>', { noremap = true })
 
---vim.keymap.set('n', '<leader>c', require('osc52').copy_operator, {expr = true})
 --vim.keymap.set('n', '<leader>cc', '<leader>c_', {remap = true})
 --vim.keymap.set('v', '<leader>y', require('osc52').copy_visual)
-vim.keymap.set('v', '<leader>y', '<Plug>OSCYankVisual')
+-- vim.keymap.set('v', '<leader>y', '<Plug>OSCYankVisual')
 vim.keymap.set('n', '<leader>y', ':ChatGPT<CR>')
 
 
