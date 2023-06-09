@@ -12,5 +12,13 @@ vim.cmd([[
 vim.cmd("autocmd BufNewFile,BufRead *.inky-slim set filetype=slim")
 
 
+
+
 -- not necessary
 --vim.o.clipboard = "unnamedplus"
+--
+vim.g.dbsyntax_treesitter_sql = 1
+
+vim.g.dbs_ui_popup_maxheight = 80
+
+vim.opt.previewheight = 30

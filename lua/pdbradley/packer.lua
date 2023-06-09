@@ -34,6 +34,10 @@ return require('packer').startup(function(use)
 	use('neovim/nvim-lspconfig')
 	use('james1236/backseat.nvim')
 
+	use('tpope/vim-dotenv')
+	use('tpope/vim-dadbod')
+	use('kristijanhusak/vim-dadbod-ui')
+
 	use({
 				'ojroques/vim-oscyank',
 				tag = 'v1.0.0'
